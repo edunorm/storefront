@@ -4,11 +4,11 @@
   "main": "src/index.ts",
   "compatibility_date": "2025-08-08",
   // Restrict the Worker to a safe API prefix so WordPress endpoints are excluded.
-  // Replace "example.com" with your actual zone. This ensures only
+  // Replace "cursusboeken.nl" with your actual zone. This ensures only
   // requests to /woo-api/* are handled by this Worker and all WP paths
   // like /wp-admin, /wp-json, /wp-content continue to bypass it.
   "routes": [
-    { "pattern": "example.com/woo-api/*", "zone_name": "example.com" }
+    { "pattern": "cursusboeken.nl/woo-api/*", "zone_name": "cursusboeken.nl" }
   ],
   // "compatibility_flags": [
   //   "nodejs_compat"
@@ -19,9 +19,9 @@
   // },
   // Configure required env vars for WooCommerce auth and URL (set via secrets in production)
   // Example for local dev only:
-  // "vars": {
-  //   "WOO_URL": "https://example.com"
-  // }
+  "vars": {
+    "WOO_URL": "https://cursusboeken.nl"
+  }
   // "compatibility_flags": [
   //   "nodejs_compat"
   // ],

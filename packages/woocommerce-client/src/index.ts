@@ -109,7 +109,9 @@ export class WooFetchClient {
 
     // Some WooCommerce endpoints return 204 on delete
     if (response.status === 204) return undefined as unknown as TResponse;
-    return (await response.json()) as TResponse;
+
+    const json = await response.json();
+    return (json) as TResponse;
   }
 
   get<TResponse>(endpoint: string, params?: Record<string, unknown>) {
